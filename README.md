@@ -1,36 +1,49 @@
 # cnc-ra-revive
 
-[Live infographic](https://zjwww.github.io/cnc-ra-revive/) · [Changelog](CHANGELOG.md) · [简体中文](README.zh-CN.md)
+[Changelog](CHANGELOG.md) · [简体中文](README.zh-CN.md) · [Published site](https://zjwww.github.io/cnc-ra-revive/)
 
-A visual guide to the relationships between EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**. The infographic combines the original game families, source-code status labels, community development approaches, and a project comparison in one sci-fi RTS layout.
+A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
 
-**Current version: v1.2.** The infographic itself uses Simplified Chinese with English game and project names. This English README documents the same artifact; it is not an English translation of the graphic.
+**Current version: v1.5.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
 
-## View and zoom
+## Open a version
 
-- [Open the HTML website](https://zjwww.github.io/cnc-ra-revive/).
-- [Open the latest standalone SVG](https://zjwww.github.io/cnc-ra-revive/RA-4K.svg).
+| Mechanism | HTML | Standalone SVG |
+| --- | --- | --- |
+| Browser-native zoom | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [RA-4K.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K.svg) |
+| In-page code zoom | [RA-4K-viewer.html](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.html) | [RA-4K-viewer.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.svg) |
 
-The HTML starts fitted to the window width. Click inside the page if necessary, then use:
+Open each SVG directly in a browser tab for its interactive behavior. Each HTML and SVG includes its own artwork and script, so none requires a neighboring file or network connection. The two formats in each pair use identical viewer code.
 
-| Control | Action |
-| --- | --- |
-| `Ctrl` + mouse wheel | Zoom the entire infographic around the pointer. |
-| `Ctrl` + `+` / `-` | Zoom in / out; `Ctrl` + `=` and numeric-keypad plus/minus are also supported. |
-| `Ctrl` + `0` | Restore fit-to-window and return to the top-left corner. |
-| Wheel / scrollbars | Move around the enlarged infographic. |
+## Zoom behavior
 
-Viewer zoom ranges from 25% to 500% relative to the fitted size. The **16:9** aspect ratio and all module positions stay intact. Resizing the window retains the selected relative zoom; reloading restores fit-to-window.
+| Action | Native pair | In-page pair |
+| --- | --- | --- |
+| Ctrl + wheel, Ctrl + plus/minus | Browser handles zoom; its menu percentage changes. | Code zooms the artwork from 25% to 500%; browser percentage stays unchanged. |
+| Ctrl + 0 | Browser returns to 100%. | Restore fitted artwork and scroll to the top-left. |
+| Percentage display | Browser zoom menu. | Tab title, for example “页面内缩放 150%”. |
+| Resize window | Adapt the fitted reference while retaining relative native zoom. | Adapt the fit while retaining the selected in-page multiplier. |
+| Reload | Keep the native fitted reference when session storage is available. | Reset in-page zoom to the fitted size. |
 
-These HTML shortcuts control **in-page viewer zoom**, not the percentage displayed in the browser's zoom menu. Focus must be in the webpage rather than the address bar or browser menus. The SVG retains browser-native zoom behavior. HTML viewer zoom requires JavaScript; with JavaScript disabled, the graphic still displays fitted to the window.
+Both pairs initially fit the **complete graphic within the window width and height**, rather than stretching or rearranging it. Excess space stays outside the artwork. After enlargement, use ordinary scrolling to reach the rest of the graphic.
 
-Both files are self-contained and can also be opened locally. No installation, build step, framework, account, or external image download is required.
+### Native fit reference
+
+The native pair leaves wheel and keyboard defaults intact. A small script calculates proportional dimensions; it does not set or simulate the browser's zoom percentage. The first visit in a tab establishes a fit reference at the browser's **current** zoom and display scaling. Session storage retains this reference through reloads, where supported.
+
+For comparable baseline testing, set the browser to **100% before opening each file in a fresh tab**. Opening a fresh tab for the first time at 150% fits the image at that initial 150%; this is intentionally different from opening at 100% and then enlarging to 150%. Ctrl + 0 always resets browser zoom, but does not redefine the stored fit reference. If session storage is blocked, reloading establishes a new reference. Moving between monitors with different display scaling has not been verified; use a fresh tab to establish a new reference there.
+
+### In-page controls and compatibility
+
+Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus/minus are also supported. Wheel zoom retains the point under the pointer where scrolling bounds allow; keyboard zoom uses the viewport center. The title displays the in-page multiplier, not browser zoom. Changing zoom directly in the browser menu remains a separate browser operation.
+
+JavaScript is required for the shared sizing behavior and in-page controls. SVG scripts run when opened as an interactive document; embedding an SVG using an HTML image element disables its scripts, so it becomes a static image. The graphic remains editable SVG text and imagery in every file.
 
 ## Preview
 
-This 960 × 540 WebP thumbnail is approximately 106 KiB. Click it to open the full viewer. No full-size PNG export is included in the current repository tree.
+[![Infographic preview](preview.webp)](https://zjwww.github.io/cnc-ra-revive/index.html)
 
-[![C&C and Red Alert community-project relationship infographic](preview.webp)](https://zjwww.github.io/cnc-ra-revive/)
+The small 960 × 540 WebP is documentation-only. No full-size PNG is included.
 
 ## What the diagram covers
 
@@ -44,18 +57,7 @@ This repository publishes an informational graphic. It does not contain a playab
 
 ## Files and version preservation
 
-| Path | Purpose |
-| --- | --- |
-| `index.html` | Latest responsive HTML viewer with whole-graphic zoom controls. |
-| `RA-4K.svg` | Latest responsive, editable standalone SVG. |
-| `preview.webp` | Small thumbnail for the READMEs. |
-| `README.md` / `README.zh-CN.md` | English and Simplified Chinese project documentation. |
-| `CHANGELOG.md` / `CHANGELOG.zh-CN.md` | Matching version histories. |
-| `.nojekyll` | Direct static-file publishing on GitHub Pages. |
-
-The current GitHub tree contains only the latest HTML and SVG, the small preview, documentation, and repository configuration. It has no `v1.0` / `v1.1` directories or full-size PNG export. Older files remain available in earlier Git commits; Git history has not been rewritten.
-
-Local working copies keep each version separately as **v1.0, v1.1, v1.2, v1.3, and so on**. Future updates preserve those local archives, replace the current root files on GitHub, and update both changelogs. GitHub Releases are not used for this static site.
+The current repository contains four viewers: `index.html` (native HTML), `RA-4K.svg` (native SVG), `RA-4K-viewer.html`, and `RA-4K-viewer.svg` (in-page zoom). The original homepage and SVG URLs remain valid. A small WebP preview and separate English/Chinese documentation are included. Historical version directories and full-size PNG exports are kept out of the current GitHub tree. All local v1.0–v1.5 archives are preserved. Git history records published versions; no GitHub Release is created for this static-site update.
 
 ## Editing
 
@@ -83,7 +85,7 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages publishes the `main` branch from the repository root. `index.html` opens the infographic on the website; `README.md` remains the default project description on GitHub. The `.nojekyll` file disables Jekyll processing. See [GitHub's Pages setup documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+GitHub Pages serves the repository root on `main`. The default `index.html` is the user-tested native HTML viewer, copied byte-for-byte from the local v1.5 candidate. Both SVG files and the alternate HTML viewer are available through the links above. The GitHub repository homepage uses `README.md`; `.nojekyll` keeps Pages publishing static files directly.
 
 ## Attribution and licensing
 
