@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.html -text whitespace=cr-at-eol
+*.svg -text whitespace=cr-at-eol
+*.png binary
