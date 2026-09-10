@@ -4,6 +4,21 @@
 
 Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
 
+## v1.8 — 2026-09-10
+
+- Changed all four HTML/SVG viewers to fit the available width. Height stays proportional at 16:9, with vertical scrolling when needed; desktop scrollbar space is accounted for.
+- Published the mobile gesture policy from the user-tested v1.7 candidate: native pinch/pan, stable rotation fitting, and no scripted mobile scrolling. Both desktop zoom mechanisms remain available.
+- Retained the original artwork, 177 text elements and v1.6 arrow fixes. The native HTML remains the Pages homepage.
+
+- Validation: 24 width-fit checks covered 4K, narrow windows and scrollbar thresholds; 96 desktop zoom checkpoints covered both display scales. Four mobile-emulated files and gesture/rotation state checks passed. Artwork outside the shared script/version is byte-identical to v1.7. This is not a new real-device Safari test.
+
+## v1.7 — Local candidate; included in v1.8
+
+- Unified mobile touch behavior across both HTML/SVG pairs: native browser pinch/pan without scripted scroll adjustment or desktop DPR compensation. Desktop zoom modes are retained.
+- Added stable viewport measurement, passive touch tracking and rotation settling: 150 ms quiet period, two frame checks, one-pixel tolerance, and an 800 ms abandonment deadline. Toolbar-only height changes do not refit the image.
+- Preserved the complete artwork and v1.6 arrow fixes. This version was initially a local candidate; the user subsequently tested and approved it before its mobile changes were included in v1.8.
+- Validation: the actual script passed controlled event/timer checks for touch blocking, toolbar changes, rotation settling and timeout behavior. Four Edge mobile-emulated documents retained layout size under emulated pinch and height changes, refitted after rotation, and made no scripted scroll calls. Desktop regression passed 96 recorded checkpoints at 100% and 150% display scaling. These checks are not iOS Safari validation.
+
 ## v1.6 — 2026-09-10
 
 - Fixed clipped arrowheads on the green OpenTS source relationship, red reconstruction relationship, and yellow Red Alert 2 compatibility relationship.

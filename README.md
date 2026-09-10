@@ -4,7 +4,7 @@
 
 A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
 
-**Current version: v1.6.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+**Current version: v1.8.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
 
 ## Open a version
 
@@ -15,17 +15,27 @@ A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, Ope
 
 Open each SVG directly in a browser tab for its interactive behavior. Each HTML and SVG includes its own artwork and script, so none requires a neighboring file or network connection. The two formats in each pair use identical viewer code.
 
-## Zoom behavior
+## iPhone / touch browsing
+
+All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains its code-driven wheel/keyboard controls on desktop only. Mobile tab titles say “手机浏览器手势缩放”; they do not report a misleading in-page percentage.
+
+The first fit uses stable small-viewport CSS width (`svw`) where supported; stable height (`svh`) also participates in rotation-settling checks. Pinch zoom, panning and toolbar-only height changes do not rewrite the artwork size. A rotation or genuine layout-width change is fitted after about 150 ms of stable measurements and two animation-frame checks. Differences within one CSS pixel are ignored. An 800 ms deadline abandons an unsettled attempt; it never forces a fit during an active touch gesture. Subsequent relevant events can start a new attempt.
+
+No mobile touch/gesture default is cancelled, browser zoom is not reset, and the script never calls `scrollTo()` on mobile. Rotation does not promise to preserve an exact image coordinate: Safari controls its own zoom and scroll restoration. A stable new orientation may change the fitted size once. Without small-viewport unit support, fitting is conservatively limited to initial load and orientation changes.
+
+The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro / iOS 26.6.2 without further issues. v1.8 retains that gesture policy and changes the fit to use width. Automated desktop/mobile emulation checks do not replace real-device testing of this new fit. The graphic, arrow fixes and 16:9 coordinates are unchanged.
+
+## Desktop zoom behavior
 
 | Action | Native pair | In-page pair |
 | --- | --- | --- |
 | Ctrl + wheel, Ctrl + plus/minus | Browser handles zoom; its menu percentage changes. | Code zooms the artwork from 25% to 500%; browser percentage stays unchanged. |
-| Ctrl + 0 | Browser returns to 100%. | Restore fitted artwork and scroll to the top-left. |
+| Ctrl + 0 | Browser returns to 100%. | Restore width-fitted artwork and scroll to the top-left. |
 | Percentage display | Browser zoom menu. | Tab title, for example “页面内缩放 150%”. |
 | Resize window | Adapt the fitted reference while retaining relative native zoom. | Adapt the fit while retaining the selected in-page multiplier. |
 | Reload | Keep the native fitted reference when session storage is available. | Reset in-page zoom to the fitted size. |
 
-Both pairs initially fit the **complete graphic within the window width and height**, rather than stretching or rearranging it. Excess space stays outside the artwork. After enlargement, use ordinary scrolling to reach the rest of the graphic.
+All four files initially **fit the available viewport width**. Height follows at 9/16 of the artwork width; a shorter window uses vertical scrolling. The artwork is never stretched, cropped or rearranged. Desktop zoom enlarges or reduces this width-fit reference; after enlargement, use ordinary scrolling to reach the rest of the graphic. Mobile pinch zoom remains controlled by the browser.
 
 ### Native fit reference
 
@@ -57,7 +67,7 @@ This repository publishes an informational graphic. It does not contain a playab
 
 ## Files and version preservation
 
-The current repository contains four viewers: `index.html` (native HTML), `RA-4K.svg` (native SVG), `RA-4K-viewer.html`, and `RA-4K-viewer.svg` (in-page zoom). The original homepage and SVG URLs remain valid. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
+The current version contains four viewers: `index.html`, `RA-4K.svg`, `RA-4K-viewer.html`, and `RA-4K-viewer.svg`. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
 
 ## Editing
 
@@ -85,7 +95,7 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages serves the repository root on `main`. The default `index.html` is the user-tested native HTML viewer, copied byte-for-byte from the local v1.6 candidate. Both SVG files and the alternate HTML viewer are available through the links above. The GitHub repository homepage uses `README.md`; `.nojekyll` keeps Pages publishing static files directly.
+GitHub Pages serves the browser-native HTML as its homepage. The other three viewers are available through the links above.
 
 ## Attribution and licensing
 
