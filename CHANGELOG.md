@@ -1,10 +1,27 @@
 # Changelog
 
-[README](README.md) · [Simplified Chinese changelog](CHANGELOG.zh-CN.md) · [Simplified Chinese README](README.zh-CN.md) · [Live infographic](https://zjwww.github.io/cnc-ra-revive/)
+[README](README.md) · [简体中文更新日志](CHANGELOG.zh-CN.md) · [简体中文说明](README.zh-CN.md) · [Live infographic](https://zjwww.github.io/cnc-ra-revive/)
 
-Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Published version directories are retained; subsequent changes use v1.2, v1.3, and so on.
+Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts; earlier versions remain in Git history.
 
-## [v1.1](v1.1/RA-4K.html) — 2026-09-10
+## v1.2 — 2026-09-10
+
+### Changed
+
+- Added whole-infographic zoom in HTML: Ctrl + wheel, Ctrl + plus/minus (including the numeric keypad), and Ctrl + 0 to restore fit-to-window.
+- Kept the layout proportional while zooming from 25% to 500%; added pointer anchoring for wheel zoom and a scrollable viewport for enlarged content.
+- Preserved relative zoom when resizing the window and restored fit-to-window on reload. These controls adjust the in-page viewer, not the browser's zoom percentage.
+- Preserved standalone SVG behavior and all 177 text elements and artwork geometry.
+- Flattened the published repository to the latest `index.html` and `RA-4K.svg`. Removed version directories and the full-size PNG from the current tree without rewriting history or deleting local archives.
+- Added a 960 × 540 WebP README thumbnail of approximately 106 KiB.
+- Changed the English README language link to “简体中文” and synchronized both READMEs and changelogs, including historical links.
+
+### Validation
+
+- Checked keyboard and mouse zoom, reset, pointer anchoring, scrolling, window resizing, range limits, and five fitted viewport sizes in Microsoft Edge.
+- Verified that original local v1.0/v1.1 files and the standalone SVG remain unchanged.
+
+## [v1.1](https://github.com/zjwww/cnc-ra-revive/blob/046f4957a5c2baacc75b7e6c28c625633117c319/v1.1/RA-4K.html) — 2026-09-10
 
 ### Changed
 
@@ -27,7 +44,7 @@ Versions describe this infographic and its viewer, not the release versions of t
 - Confirmed equal horizontal and vertical scaling, no horizontal overflow, and preservation of all 177 text elements.
 - Verified archived file hashes before publication.
 
-## [v1.0](v1.0/RA-4K.html) — 2026-09-06
+## [v1.0](https://github.com/zjwww/cnc-ra-revive/blob/046f4957a5c2baacc75b7e6c28c625633117c319/v1.0/RA-4K.html) — 2026-09-06
 
 ### Added
 

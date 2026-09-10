@@ -1,27 +1,36 @@
 # cnc-ra-revive
 
-[Live infographic](https://zjwww.github.io/cnc-ra-revive/) · [Changelog](CHANGELOG.md) · [Simplified Chinese](README.zh-CN.md)
+[Live infographic](https://zjwww.github.io/cnc-ra-revive/) · [Changelog](CHANGELOG.md) · [简体中文](README.zh-CN.md)
 
 A visual guide to the relationships between EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**. The infographic combines the original game families, source-code status labels, community development approaches, and a project comparison in one sci-fi RTS layout.
 
-**Current version: v1.1.** The infographic itself uses Simplified Chinese with English game and project names. This English README documents the same artifact; it is not an English translation of the graphic.
+**Current version: v1.2.** The infographic itself uses Simplified Chinese with English game and project names. This English README documents the same artifact; it is not an English translation of the graphic.
 
-## View
+## View and zoom
 
-- [Open the website](https://zjwww.github.io/cnc-ra-revive/).
-- [Open the versioned v1.1 HTML](https://zjwww.github.io/cnc-ra-revive/v1.1/RA-4K.html).
-- [Open the responsive v1.1 SVG](https://zjwww.github.io/cnc-ra-revive/v1.1/RA-4K.svg).
-- [View the original 3840 × 2160 PNG](v1.0/RA-4K.png).
+- [Open the HTML website](https://zjwww.github.io/cnc-ra-revive/).
+- [Open the latest standalone SVG](https://zjwww.github.io/cnc-ra-revive/RA-4K.svg).
 
-The HTML and standalone SVG scale to the browser's width while preserving the **16:9** canvas, artwork proportions, and internal layout. Short windows can scroll vertically. Narrow screens show the whole composition at a smaller size; use browser zoom for detailed reading.
+The HTML starts fitted to the window width. Click inside the page if necessary, then use:
 
-Both v1.1 files are self-contained and can also be opened locally. No installation, build step, JavaScript framework, account, or external image download is required.
+| Control | Action |
+| --- | --- |
+| `Ctrl` + mouse wheel | Zoom the entire infographic around the pointer. |
+| `Ctrl` + `+` / `-` | Zoom in / out; `Ctrl` + `=` and numeric-keypad plus/minus are also supported. |
+| `Ctrl` + `0` | Restore fit-to-window and return to the top-left corner. |
+| Wheel / scrollbars | Move around the enlarged infographic. |
+
+Viewer zoom ranges from 25% to 500% relative to the fitted size. The **16:9** aspect ratio and all module positions stay intact. Resizing the window retains the selected relative zoom; reloading restores fit-to-window.
+
+These HTML shortcuts control **in-page viewer zoom**, not the percentage displayed in the browser's zoom menu. Focus must be in the webpage rather than the address bar or browser menus. The SVG retains browser-native zoom behavior. HTML viewer zoom requires JavaScript; with JavaScript disabled, the graphic still displays fitted to the window.
+
+Both files are self-contained and can also be opened locally. No installation, build step, framework, account, or external image download is required.
 
 ## Preview
 
-The original PNG below previews the composition retained by v1.1. It is the archived v1.0 render, not a separately generated v1.1 PNG.
+This 960 × 540 WebP thumbnail is approximately 106 KiB. Click it to open the full viewer. No full-size PNG export is included in the current repository tree.
 
-![C&C and Red Alert community-project relationship infographic](v1.0/RA-4K.png)
+[![C&C and Red Alert community-project relationship infographic](preview.webp)](https://zjwww.github.io/cnc-ra-revive/)
 
 ## What the diagram covers
 
@@ -37,25 +46,22 @@ This repository publishes an informational graphic. It does not contain a playab
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Current website entry point; a byte-for-byte copy of `v1.1/RA-4K.html`. |
-| `v1.0/RA-4K.html` | Original fixed-size HTML. |
-| `v1.0/RA-4K.svg` | Original fixed-size, editable SVG. |
-| `v1.0/RA-4K.png` | Original 3840 × 2160 raster export. |
-| `v1.1/RA-4K.html` | Responsive HTML with inline SVG. |
-| `v1.1/RA-4K.svg` | Responsive standalone SVG. |
+| `index.html` | Latest responsive HTML viewer with whole-graphic zoom controls. |
+| `RA-4K.svg` | Latest responsive, editable standalone SVG. |
+| `preview.webp` | Small thumbnail for the READMEs. |
 | `README.md` / `README.zh-CN.md` | English and Simplified Chinese project documentation. |
 | `CHANGELOG.md` / `CHANGELOG.zh-CN.md` | Matching version histories. |
 | `.nojekyll` | Direct static-file publishing on GitHub Pages. |
 
-Published version directories are preserved. Future functional or content changes go into **v1.2, v1.3, and subsequent directories**, without overwriting earlier versions. The root `index.html` may then be updated to match the newly selected current HTML. Both changelogs should be updated together.
+The current GitHub tree contains only the latest HTML and SVG, the small preview, documentation, and repository configuration. It has no `v1.0` / `v1.1` directories or full-size PNG export. Older files remain available in earlier Git commits; Git history has not been rewritten.
 
-Git commits and version directories provide the publication history. GitHub Releases are not needed for this static website and are not part of the v1.1 publication.
+Local working copies keep each version separately as **v1.0, v1.1, v1.2, v1.3, and so on**. Future updates preserve those local archives, replace the current root files on GitHub, and update both changelogs. GitHub Releases are not used for this static site.
 
 ## Editing
 
 Important text, table entries, borders, and arrows are editable SVG elements. Edit a copy of the SVG or the inline SVG inside the HTML with a UTF-8 text editor or an SVG-capable editor. The HTML is a static viewer; it does not offer click-to-edit controls or in-browser saving.
 
-Keep the `0 0 3840 2160` viewBox and proportional scaling rules. When changing copy, check wrapping, text boundaries, and image separation. The HTML and SVG are separate files: update both copies deliberately for a new version. To export a PNG, render at **3840 × 2160** explicitly; a browser screenshot at another window size will have that window's dimensions.
+Keep the `0 0 3840 2160` viewBox, proportional scaling rules, and viewer controls. When changing copy, check wrapping, text boundaries, and image separation. The HTML and SVG are separate files: update both copies deliberately for a new version. To export a PNG, render at **3840 × 2160** explicitly; a browser screenshot at another window size will have that window's dimensions.
 
 ## Scope and visual limitations
 
