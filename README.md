@@ -4,7 +4,7 @@
 
 A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
 
-**Current version: v1.5.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+**Current version: v1.6.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
 
 ## Open a version
 
@@ -43,7 +43,7 @@ JavaScript is required for the shared sizing behavior and in-page controls. SVG 
 
 [![Infographic preview](preview.webp)](https://zjwww.github.io/cnc-ra-revive/index.html)
 
-The small 960 × 540 WebP is documentation-only. No full-size PNG is included.
+The small 960 × 540 WebP is documentation-only.
 
 ## What the diagram covers
 
@@ -57,7 +57,7 @@ This repository publishes an informational graphic. It does not contain a playab
 
 ## Files and version preservation
 
-The current repository contains four viewers: `index.html` (native HTML), `RA-4K.svg` (native SVG), `RA-4K-viewer.html`, and `RA-4K-viewer.svg` (in-page zoom). The original homepage and SVG URLs remain valid. A small WebP preview and separate English/Chinese documentation are included. Historical version directories and full-size PNG exports are kept out of the current GitHub tree. All local v1.0–v1.5 archives are preserved. Git history records published versions; no GitHub Release is created for this static-site update.
+The current repository contains four viewers: `index.html` (native HTML), `RA-4K.svg` (native SVG), `RA-4K-viewer.html`, and `RA-4K-viewer.svg` (in-page zoom). The original homepage and SVG URLs remain valid. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
 
 ## Editing
 
@@ -71,7 +71,7 @@ The content is an editorial snapshot prepared in September 2026, not a live stat
 
 Backgrounds, game-style illustrations, and emblems include AI-generated reconstructions and may differ from official artwork. Text and diagram geometry were rendered on a 3840 × 2160 canvas, but the decorative raster source was 1672 × 941; the artwork is **not entirely native 4K**. The complete infographic was rebuilt rather than simply enlarging the supplied reference. Typography uses system fonts, primarily Microsoft YaHei and Arial, so rendering can differ on systems without those fonts.
 
-The self-contained HTML and SVG are each approximately 10 MB because images are embedded. A later version could share and optimize image assets to improve loading speed while retaining the archived files.
+The self-contained HTML and SVG are each approximately 10 MB because images are embedded.
 
 ## Upstream references
 
@@ -85,7 +85,7 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages serves the repository root on `main`. The default `index.html` is the user-tested native HTML viewer, copied byte-for-byte from the local v1.5 candidate. Both SVG files and the alternate HTML viewer are available through the links above. The GitHub repository homepage uses `README.md`; `.nojekyll` keeps Pages publishing static files directly.
+GitHub Pages serves the repository root on `main`. The default `index.html` is the user-tested native HTML viewer, copied byte-for-byte from the local v1.6 candidate. Both SVG files and the alternate HTML viewer are available through the links above. The GitHub repository homepage uses `README.md`; `.nojekyll` keeps Pages publishing static files directly.
 
 ## Attribution and licensing
 

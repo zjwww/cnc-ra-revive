@@ -4,6 +4,13 @@
 
 Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
 
+## v1.6 — 2026-09-10
+
+- Fixed clipped arrowheads on the green OpenTS source relationship, red reconstruction relationship, and yellow Red Alert 2 compatibility relationship.
+- Added three dedicated glow filters with explicit coordinate regions and 48-unit padding, covering the marker and glow. Panel filters, arrow coordinates, colors, strokes, marker shapes, layer order, all text, and viewer code remain unchanged.
+- Applied the same fix to native HTML/SVG and in-page HTML/SVG, following user testing and approval. Previous local versions are preserved; the native HTML remains the Pages homepage.
+- Verified all 12 arrowhead crops in Edge, including pixels previously missing below the arrow centerline. Checked all four files at 3840 × 2160, 1920 × 1080, and 1280 × 800: uniform scaling, 16:9 artwork, unchanged origin, and 177 text elements. In-page 150% zoom also passed. Refreshed the small documentation thumbnail.
+
 ## v1.5 — 2026-09-10
 
 - Added native HTML/SVG and in-page HTML/SVG: four independent, self-contained files.
