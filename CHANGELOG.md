@@ -4,6 +4,22 @@
 
 Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
 
+## v1.10 — 2026-09-11
+
+- Fixed an unwanted horizontal scrollbar at the desktop fitted size introduced by v1.8: integer `clientWidth` could round above the actual fractional viewport width, reproduced at 150% display scaling.
+- Use fractional viewport width and round down to a physical pixel while deriving height proportionally. Keep real horizontal scrolling after enlargement; preserve mobile gesture handling, v1.9 links and tooltip behavior.
+- Published after user testing and approval, including the eleven project links and tooltip changes from v1.9. The native HTML remains the Pages homepage; all prior local versions are preserved.
+
+- Validation: reproduced the old fractional overflow at 150% display scaling; recorded 165 checks across five display scales and four files, including zero fitted horizontal scroll range, no horizontal scrollbar height, enlargement and reset. Four mobile-emulated documents and 44 links / 48 new-tab activations passed. Default pixels and text geometry at 100% match v1.9. No new iPhone Safari test was performed.
+
+## v1.9 — Local candidate; included in v1.10
+
+- Added 11 project-name links to both HTML/SVG pairs: right-hand headings, comparison headings, four EA repositories and Modding Support. Each uses the requested destination, hover/focus underline, URL tooltip and a new browsing context.
+- Removed the image-wide SVG title tooltip. HTML retains dynamic tab titles; standalone SVG uses its filename to prevent the tooltip from returning after zoom.
+- Preserved artwork geometry, width fitting, desktop zoom controls and mobile native gestures. Initially distributed as a local candidate; its changes were approved by the user and included in v1.10.
+
+- Validation: all four files matched v1.8 default-render pixels and all 177 text bounds. Verified 44 links, 48 new-tab activations (mouse and keyboard), underline styles and absence of the root title tooltip; 96 desktop zoom checks and four mobile-emulated documents passed. External destination content was stubbed during navigation tests; this was not an iPhone Safari test.
+
 ## v1.8 — 2026-09-10
 
 - Changed all four HTML/SVG viewers to fit the available width. Height stays proportional at 16:9, with vertical scrolling when needed; desktop scrollbar space is accounted for.

@@ -4,7 +4,7 @@
 
 A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
 
-**Current version: v1.8.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+**Current version: v1.10.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
 
 ## Open a version
 
@@ -15,15 +15,29 @@ A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, Ope
 
 Open each SVG directly in a browser tab for its interactive behavior. Each HTML and SVG includes its own artwork and script, so none requires a neighboring file or network connection. The two formats in each pair use identical viewer code.
 
+## Fractional display scaling
+
+The desktop width fit uses fractional viewport measurements instead of rounded `clientWidth`, and rounds the artwork width down to a physical pixel. Height follows the same 16:9 scale. This fixes a subpixel overhang that could produce a horizontal scrollbar at the fitted size, including 4K windows with 150% display scaling. The fit may leave less than one physical pixel unused. Without the Visual Viewport API, a conservative one-CSS-pixel inset is used.
+
+Horizontal overflow is not hidden: intentional native or in-page enlargement still allows scrolling to the right edge. Mobile stable-viewport measurement and browser-native gestures are unchanged. The eleven links and tooltip changes from v1.9 are retained.
+
+## Project links
+
+Eleven marked project names are clickable in every HTML/SVG file. Hovering adds an underline and displays the destination URL; keyboard focus also adds an underline. Links request a new tab (`target="_blank"`), leaving the infographic open. Browser preferences control whether the new browsing context is a tab or window.
+
+The three right-hand headings link to OpenTS on GitHub, the OpenRA website and the Chrono Divide website. The bottom comparison headings link to OpenTS on GitHub, OpenRA on GitHub and the Chrono Divide GitHub organization. The four EA source names and `CnC_Modding_Support` link to their corresponding Electronic Arts GitHub repositories.
+
+The image-wide “RA · …” hover tooltip has been removed. HTML retains its browser tab title and in-page zoom percentage. Standalone SVG uses its filename as the tab label and does not show an in-page percentage there; this prevents the browser from recreating the image-wide SVG tooltip. Zoom controls and layout are unchanged. Open SVG directly as a document to use its links and controls.
+
 ## iPhone / touch browsing
 
-All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains its code-driven wheel/keyboard controls on desktop only. Mobile tab titles say “手机浏览器手势缩放”; they do not report a misleading in-page percentage.
+All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains its code-driven wheel/keyboard controls on desktop only. Mobile HTML tab titles say “手机浏览器手势缩放”; SVG tabs use their filenames. Neither reports a misleading mobile in-page percentage.
 
 The first fit uses stable small-viewport CSS width (`svw`) where supported; stable height (`svh`) also participates in rotation-settling checks. Pinch zoom, panning and toolbar-only height changes do not rewrite the artwork size. A rotation or genuine layout-width change is fitted after about 150 ms of stable measurements and two animation-frame checks. Differences within one CSS pixel are ignored. An 800 ms deadline abandons an unsettled attempt; it never forces a fit during an active touch gesture. Subsequent relevant events can start a new attempt.
 
 No mobile touch/gesture default is cancelled, browser zoom is not reset, and the script never calls `scrollTo()` on mobile. Rotation does not promise to preserve an exact image coordinate: Safari controls its own zoom and scroll restoration. A stable new orientation may change the fitted size once. Without small-viewport unit support, fitting is conservatively limited to initial load and orientation changes.
 
-The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro / iOS 26.6.2 without further issues. v1.8 retains that gesture policy and changes the fit to use width. Automated desktop/mobile emulation checks do not replace real-device testing of this new fit. The graphic, arrow fixes and 16:9 coordinates are unchanged.
+The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro / iOS 26.6.2 without further issues. The current version retains that gesture policy and width fitting. Automated desktop/mobile emulation checks do not replace real-device testing of this new fit. The graphic, arrow fixes and 16:9 coordinates are unchanged.
 
 ## Desktop zoom behavior
 
@@ -31,7 +45,7 @@ The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro /
 | --- | --- | --- |
 | Ctrl + wheel, Ctrl + plus/minus | Browser handles zoom; its menu percentage changes. | Code zooms the artwork from 25% to 500%; browser percentage stays unchanged. |
 | Ctrl + 0 | Browser returns to 100%. | Restore width-fitted artwork and scroll to the top-left. |
-| Percentage display | Browser zoom menu. | Tab title, for example “页面内缩放 150%”. |
+| Percentage display | Browser zoom menu. | HTML tab title, for example “页面内缩放 150%”; SVG uses its filename. |
 | Resize window | Adapt the fitted reference while retaining relative native zoom. | Adapt the fit while retaining the selected in-page multiplier. |
 | Reload | Keep the native fitted reference when session storage is available. | Reset in-page zoom to the fitted size. |
 
@@ -45,7 +59,7 @@ For comparable baseline testing, set the browser to **100% before opening each f
 
 ### In-page controls and compatibility
 
-Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus/minus are also supported. Wheel zoom retains the point under the pointer where scrolling bounds allow; keyboard zoom uses the viewport center. The title displays the in-page multiplier, not browser zoom. Changing zoom directly in the browser menu remains a separate browser operation.
+Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus/minus are also supported. Wheel zoom retains the point under the pointer where scrolling bounds allow; keyboard zoom uses the viewport center. The HTML title displays the in-page multiplier, not browser zoom; SVG uses its filename. Changing zoom directly in the browser menu remains a separate browser operation.
 
 JavaScript is required for the shared sizing behavior and in-page controls. SVG scripts run when opened as an interactive document; embedding an SVG using an HTML image element disables its scripts, so it becomes a static image. The graphic remains editable SVG text and imagery in every file.
 
@@ -95,7 +109,7 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages serves the browser-native HTML as its homepage. The other three viewers are available through the links above.
+GitHub Pages serves the repository root on `main`. The native HTML is the homepage; all four viewers above are the approved v1.10 files. The repository overview uses the English README, with links to the separate Chinese README and changelog at the top.
 
 ## Attribution and licensing
 
