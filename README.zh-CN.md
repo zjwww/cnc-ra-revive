@@ -4,14 +4,18 @@
 
 展示 EA **《命令与征服》／《红色警戒》**与 **OpenTS、OpenRA、Chrono Divide** 之间关系的信息图。
 
-**当前版本：v1.10。** 网站首页默认使用浏览器原生缩放。 提供两套缩放机制、四个独立文件。每个文件均保留原来的 3840 × 2160 坐标系、16:9 图像比例、177 个文字元素和固定内部布局。
+**当前版本：v1.11。** 网站首页默认使用浏览器原生缩放。 提供两套缩放机制、四个独立文件。每个文件均保留原来的 3840 × 2160 坐标系、16:9 图像比例、177 个文字元素和固定内部布局。
+
+## 浏览器标签页标题
+
+两个格式统一采用 `CnC-RA-Revive · Native Scale` 或 `CnC-RA-Revive · Viewer Scale`。桌面的 Viewer Scale 组在标题后附加页面内倍率，例如 `CnC-RA-Revive · Viewer Scale 110%`；Native Scale 不重复显示浏览器菜单倍率。手机标题保留模式名，不显示百分比。信息图正文保持不变。
 
 ## 选择版本
 
 | 缩放机制 | HTML 网页 | 独立 SVG |
 | --- | --- | --- |
-| 浏览器原生缩放 | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [RA-4K.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K.svg) |
-| 页面内代码缩放 | [RA-4K-viewer.html](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.html) | [RA-4K-viewer.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.svg) |
+| 浏览器原生缩放 | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [CnC-RA-Revive-4k-Native.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
+| 页面内代码缩放 | [CnC-RA-Revive-4k-Viewer.html](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [CnC-RA-Revive-4k-Viewer.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
 
 SVG 请直接在浏览器标签页中打开，以使用交互功能。每个 HTML、SVG 均内嵌图片和脚本，可单独使用，不依赖相邻文件或网络连接。同一套中的两个格式使用完全相同的查看器代码。
 
@@ -27,11 +31,11 @@ SVG 请直接在浏览器标签页中打开，以使用交互功能。每个 HTM
 
 右侧三个标题分别链接至 OpenTS GitHub 仓库、OpenRA 官网和 Chrono Divide 官网；底部表头分别链接至 OpenTS GitHub 仓库、OpenRA GitHub 仓库和 Chrono Divide GitHub 组织。EA 四个源码名称及 `CnC_Modding_Support` 分别链接到 Electronic Arts 对应的 GitHub 仓库。
 
-已取消整张图像上的“RA · …”悬停提示。HTML 保留标签页标题及页面内缩放倍率；独立 SVG 使用文件名作为标签页名称，不再在标签页显示页面内倍率，以避免浏览器重新生成整图 SVG 提示。缩放操作和布局保持不变。SVG 请直接作为文档打开，以使用链接和查看器交互。
+HTML 使用 head 中的文档标题，独立 SVG 使用根元素中的文档标题；HTML 内嵌 SVG 不设置根标题，以避免整图悬停提示。项目链接保留目标地址提示。SVG 请直接作为文档打开，以使用链接和查看器交互。
 
 ## iPhone／触屏浏览
 
-四个文件均将手机双指缩放和平移交给浏览器。页面内缩放组仅在桌面继续使用代码处理滚轮与快捷键。手机 HTML 标签页显示“手机浏览器手势缩放”，SVG 标签页显示文件名，均不显示容易误解的手机页面内倍率。
+四个文件均将手机双指缩放和平移交给浏览器。页面内缩放组仅在桌面继续使用代码处理滚轮与快捷键。手机标签页采用同样的英文模式名，不显示百分比；两组的触屏手势仍由浏览器原生处理。
 
 首次适配优先采用稳定的小视口 CSS 宽度（`svw`）；稳定高度（`svh`）也用于旋转后的稳定性检查。双指缩放、拖动和工具栏引起的单纯高度变化不重写图像尺寸。屏幕旋转或真实布局宽度变化后，等待约 150 毫秒稳定，再连续核对两帧；1 个 CSS 像素以内的差异视为误差。一次检查超过 800 毫秒仍未稳定就放弃，不会在手势期间强制适配；后续有效事件可重新发起检查。
 
@@ -45,7 +49,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 | --- | --- | --- |
 | Ctrl + 滚轮、Ctrl + 加减键 | 浏览器处理缩放，菜单百分比随之变化。 | 代码按 25%～500% 缩放图像，浏览器百分比保持原值。 |
 | Ctrl + 0 | 浏览器恢复 100%。 | 图像恢复按宽度适配，并滚动回左上角。 |
-| 倍率显示 | 浏览器缩放菜单。 | HTML 标签页标题，例如“页面内缩放 150%”；SVG 显示文件名。 |
+| 倍率显示 | 浏览器缩放菜单。 | HTML 与 SVG 标签页标题，例如“CnC-RA-Revive · Viewer Scale 150%”。 |
 | 调整窗口大小 | 适配基准随窗口调整，保留相对原生缩放。 | 重新计算适配尺寸，保留所选页面内倍率。 |
 | 刷新 | 会话存储可用时，保留原生缩放的适配基准。 | 页面内倍率恢复为适配窗口的初始值。 |
 
@@ -59,7 +63,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 ### 页面内操作与兼容性
 
-使用快捷键前先让文档获得焦点。支持 Ctrl + 等号和数字小键盘加减键。滚轮缩放尽量保持鼠标指向的图内位置，受滚动边界限制；键盘缩放以可视区域中心为锚点。HTML 标签页标题显示页面内倍率，不代表浏览器倍率；SVG 标签页显示文件名。直接操作浏览器菜单仍属于另一套浏览器操作。
+使用快捷键前先让文档获得焦点。支持 Ctrl + 等号和数字小键盘加减键。滚轮缩放尽量保持鼠标指向的图内位置，受滚动边界限制；键盘缩放以可视区域中心为锚点。HTML 与独立 SVG 标签页均显示桌面页面内倍率，不代表浏览器倍率。直接操作浏览器菜单仍属于另一套浏览器操作。
 
 共同的尺寸适配及页面内交互需要 JavaScript。SVG 作为独立交互文档打开时可运行脚本；通过 HTML 图片元素嵌入时脚本会被禁用，成为静态图像。四个文件中的图像仍保留可编辑的 SVG 文字与素材。
 
@@ -81,7 +85,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 ## 文件与版本保留
 
-当前版本包含四个查看文件：`index.html`、`RA-4K.svg`、`RA-4K-viewer.html`、`RA-4K-viewer.svg`，以及小尺寸 WebP 缩略图和独立的中英文文档。当前 GitHub 文件树不包含历史版本目录。
+当前版本包含四个查看文件：`index.html`、`CnC-RA-Revive-4k-Native.svg`、`CnC-RA-Revive-4k-Viewer.html`、`CnC-RA-Revive-4k-Viewer.svg`，以及小尺寸 WebP 缩略图和独立的中英文文档。当前 GitHub 文件树不包含历史版本目录。
 
 ## 后期编辑
 
@@ -109,7 +113,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 ## 网站托管
 
-GitHub Pages 从 `main` 分支根目录发布，原生 HTML 作为首页；上方四个查看文件均为已确认的 v1.10。仓库默认显示英文 README，顶部提供独立中文版及更新日志链接。
+GitHub Pages 从 `main` 分支根目录发布 v1.11，原生 HTML 作为首页。英文 README 顶部提供独立中文版及更新日志链接。
 
 ## 署名与许可
 

@@ -4,14 +4,18 @@
 
 A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
 
-**Current version: v1.10.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+**Current version: v1.11.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+
+## Browser tab titles
+
+Both formats use `CnC-RA-Revive · Native Scale` or `CnC-RA-Revive · Viewer Scale`. On desktop, the Viewer Scale pair appends its current in-page percentage, for example `CnC-RA-Revive · Viewer Scale 110%`. Native Scale does not duplicate the browser menu percentage. Mobile titles retain the mode name without a percentage. Infographic text is unchanged.
 
 ## Open a version
 
 | Mechanism | HTML | Standalone SVG |
 | --- | --- | --- |
-| Browser-native zoom | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [RA-4K.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K.svg) |
-| In-page code zoom | [RA-4K-viewer.html](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.html) | [RA-4K-viewer.svg](https://zjwww.github.io/cnc-ra-revive/RA-4K-viewer.svg) |
+| Browser-native zoom | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [CnC-RA-Revive-4k-Native.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
+| In-page code zoom | [CnC-RA-Revive-4k-Viewer.html](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [CnC-RA-Revive-4k-Viewer.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
 
 Open each SVG directly in a browser tab for its interactive behavior. Each HTML and SVG includes its own artwork and script, so none requires a neighboring file or network connection. The two formats in each pair use identical viewer code.
 
@@ -27,11 +31,11 @@ Eleven marked project names are clickable in every HTML/SVG file. Hovering adds 
 
 The three right-hand headings link to OpenTS on GitHub, the OpenRA website and the Chrono Divide website. The bottom comparison headings link to OpenTS on GitHub, OpenRA on GitHub and the Chrono Divide GitHub organization. The four EA source names and `CnC_Modding_Support` link to their corresponding Electronic Arts GitHub repositories.
 
-The image-wide “RA · …” hover tooltip has been removed. HTML retains its browser tab title and in-page zoom percentage. Standalone SVG uses its filename as the tab label and does not show an in-page percentage there; this prevents the browser from recreating the image-wide SVG tooltip. Zoom controls and layout are unchanged. Open SVG directly as a document to use its links and controls.
+HTML uses a document title in its head, while standalone SVG uses its root document title. The inline SVG in HTML has no root title, avoiding an image-wide hover tooltip. Project links retain their own destination tooltips. Open SVG directly as a document to use its links and controls.
 
 ## iPhone / touch browsing
 
-All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains its code-driven wheel/keyboard controls on desktop only. Mobile HTML tab titles say “手机浏览器手势缩放”; SVG tabs use their filenames. Neither reports a misleading mobile in-page percentage.
+All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains code-driven wheel/keyboard controls on desktop only. Mobile tab titles use the same English mode names without a percentage; touch gestures remain browser-native in both pairs.
 
 The first fit uses stable small-viewport CSS width (`svw`) where supported; stable height (`svh`) also participates in rotation-settling checks. Pinch zoom, panning and toolbar-only height changes do not rewrite the artwork size. A rotation or genuine layout-width change is fitted after about 150 ms of stable measurements and two animation-frame checks. Differences within one CSS pixel are ignored. An 800 ms deadline abandons an unsettled attempt; it never forces a fit during an active touch gesture. Subsequent relevant events can start a new attempt.
 
@@ -45,7 +49,7 @@ The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro /
 | --- | --- | --- |
 | Ctrl + wheel, Ctrl + plus/minus | Browser handles zoom; its menu percentage changes. | Code zooms the artwork from 25% to 500%; browser percentage stays unchanged. |
 | Ctrl + 0 | Browser returns to 100%. | Restore width-fitted artwork and scroll to the top-left. |
-| Percentage display | Browser zoom menu. | HTML tab title, for example “页面内缩放 150%”; SVG uses its filename. |
+| Percentage display | Browser zoom menu. | HTML and SVG tab titles, for example “CnC-RA-Revive · Viewer Scale 150%”. |
 | Resize window | Adapt the fitted reference while retaining relative native zoom. | Adapt the fit while retaining the selected in-page multiplier. |
 | Reload | Keep the native fitted reference when session storage is available. | Reset in-page zoom to the fitted size. |
 
@@ -59,7 +63,7 @@ For comparable baseline testing, set the browser to **100% before opening each f
 
 ### In-page controls and compatibility
 
-Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus/minus are also supported. Wheel zoom retains the point under the pointer where scrolling bounds allow; keyboard zoom uses the viewport center. The HTML title displays the in-page multiplier, not browser zoom; SVG uses its filename. Changing zoom directly in the browser menu remains a separate browser operation.
+Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus/minus are also supported. Wheel zoom retains the point under the pointer where scrolling bounds allow; keyboard zoom uses the viewport center. Both HTML and standalone SVG titles display the desktop in-page multiplier, not browser zoom. Changing zoom directly in the browser menu remains a separate browser operation.
 
 JavaScript is required for the shared sizing behavior and in-page controls. SVG scripts run when opened as an interactive document; embedding an SVG using an HTML image element disables its scripts, so it becomes a static image. The graphic remains editable SVG text and imagery in every file.
 
@@ -81,7 +85,7 @@ This repository publishes an informational graphic. It does not contain a playab
 
 ## Files and version preservation
 
-The current version contains four viewers: `index.html`, `RA-4K.svg`, `RA-4K-viewer.html`, and `RA-4K-viewer.svg`. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
+The current version contains four viewers: `index.html`, `CnC-RA-Revive-4k-Native.svg`, `CnC-RA-Revive-4k-Viewer.html`, and `CnC-RA-Revive-4k-Viewer.svg`. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
 
 ## Editing
 
@@ -109,7 +113,7 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages serves the repository root on `main`. The native HTML is the homepage; all four viewers above are the approved v1.10 files. The repository overview uses the English README, with links to the separate Chinese README and changelog at the top.
+GitHub Pages serves v1.11 from the repository root on `main`, with native HTML as its homepage. The English README links to separate Chinese documentation and changelogs.
 
 ## Attribution and licensing
 

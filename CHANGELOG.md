@@ -4,6 +4,14 @@
 
 Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
 
+## v1.11 — 2026-09-12
+
+- Standardized all four browser tab titles to the CnC-RA-Revive prefix with Native Scale / Viewer Scale labels, including mobile titles.
+- Restored standalone SVG document titles and desktop Viewer Scale percentage updates; HTML keeps its title outside the inline SVG. Link destination tooltips remain unchanged.
+- Preserved artwork, proportional sizing and zoom controls.
+
+- Validation: all four desktop/mobile-emulated titles, Viewer 110% and reset, identical screenshot bytes and text geometry versus v1.10, eleven unchanged links, fractional-DPI width fit and stable emulated pinch passed. Earlier archives remain preserved. No iPhone Safari device test was performed.
+
 ## v1.10 — 2026-09-11
 
 - Fixed an unwanted horizontal scrollbar at the desktop fitted size introduced by v1.8: integer `clientWidth` could round above the actual fractional viewport width, reproduced at 150% display scaling.
@@ -48,7 +56,7 @@ Versions describe this infographic and its viewer, not the release versions of t
 - Used identical sizing and interaction code for both formats in each pair, with a fixed 3840 × 2160 viewBox and one uniform scale. Preserved all original artwork, coordinates, and 177 text elements.
 - Native mode delegates zoom input to the browser and uses session storage to retain the initial fit reference on reload. The initial browser zoom establishes that reference; it is not assumed to be 100%.
 - In-page mode handles Ctrl + wheel, plus/minus and zero; supports 25%–500%, pointer anchoring, window resizing, and a percentage in the tab title. Browser zoom percentage remains separate.
-- Published after user testing and approval. The native HTML viewer is the Pages homepage (`index.html`); the native SVG keeps its original `RA-4K.svg` URL. The alternate pair uses `RA-4K-viewer.html` and `RA-4K-viewer.svg`.
+- Published after user testing and approval. The native HTML viewer is the Pages homepage (`index.html`); the native SVG keeps its original `RA-4K.svg` URL. The alternate pair uses `CnC-RA-Revive-4k-Viewer.html` and `CnC-RA-Revive-4k-Viewer.svg`.
 - Preserved all local v1.0–v1.5 archives. The GitHub root contains only the latest four viewers, thumbnail, documentation, and configuration. No GitHub Release was created.
 - See README for initialization, script restrictions, and cross-monitor validation limits.
 
