@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/runtime-browser_JavaScript-f0db4f?style=flat" alt="Runtime: browser JavaScript">
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT_(project--owned)-blue?style=flat" alt="License: MIT for project-owned contributions; see scope"></a>
   </p>
-  <p><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="https://zjwww.github.io/cnc-ra-revive/">Published site</a> | <a href="https://github.com/zjwww/cnc-ra-revive/issues">Issues</a></p>
+  <p><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.html">Published site</a> | <a href="https://github.com/zjwww/cnc-ra-revive/issues">Issues</a></p>
 </div>
 
 [![English infographic preview](preview-en.webp)](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.html)
