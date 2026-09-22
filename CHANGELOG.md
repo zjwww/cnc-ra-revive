@@ -2,7 +2,14 @@
 
 [README](README.md) · [简体中文更新日志](CHANGELOG.zh-CN.md) · [简体中文说明](README.zh-CN.md) · [Live infographic](https://zjwww.github.io/cnc-ra-revive/)
 
-Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains only the latest artifacts. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
+Versions describe this infographic and its viewer, not the release versions of the games or community engines shown in it. Local versions are archived separately. From v1.2 onward, the current GitHub tree contains the currently published editions. Previously published versions remain in Git history; v1.3 and v1.4 were local-only candidates.
+
+## v1.12-en — 2026-09-22
+
+- Published the English edition as four self-contained Native Scale / Viewer Scale HTML and SVG files, retaining 177 text positions, artwork geometry, eleven links per file and the v1.11 viewer scripts. English wording and selected font sizes were adapted to the original layout.
+- Kept the four Chinese v1.11 HTML/SVG files byte-for-byte unchanged; the default website remains Chinese. Full-size PNG exports remain local.
+- Updated both READMEs with corresponding language previews, theme-aware scheme D SVG logos and aligned headers. Selected MIT for project-owned contributions with explicit third-party and AI-image scope notes.
+- Validation: existing English tests cover 32 desktop checks at 150% display scaling, matching default screenshots, 44 link checks / 48 new-tab activations, and four-document mobile emulation. No new physical iPhone / Safari test.
 
 ## v1.11 — 2026-09-12
 

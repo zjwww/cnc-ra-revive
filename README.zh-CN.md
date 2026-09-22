@@ -1,10 +1,28 @@
-# cnc-ra-revive
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+    <img src="assets/logo-light.svg" width="96" alt="CnC-RA-Revive CR command logo">
+  </picture>
+  <h1>CnC-RA-Revive</h1>
+  <p>展示《命令与征服》／《红色警戒》与 OpenTS、OpenRA、Chrono Divide 之间关系的信息图。</p>
+  <p>
+    <img src="https://img.shields.io/badge/version_EN-1.12--en-00a85a?style=flat" alt="English version 1.12-en">
+    <img src="https://img.shields.io/badge/version_ZH-1.11-00a85a?style=flat" alt="Chinese version 1.11">
+    <img src="https://img.shields.io/badge/platform-desktop_%7C_mobile-276bd1?style=flat" alt="Platform: desktop and mobile browsers">
+    <img src="https://img.shields.io/badge/runtime-browser_JavaScript-f0db4f?style=flat" alt="Runtime: browser JavaScript">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT_(project--owned)-blue?style=flat" alt="License: MIT for project-owned contributions; see scope"></a>
+  </p>
+  <p><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="https://zjwww.github.io/cnc-ra-revive/">已发布网站</a> | <a href="https://github.com/zjwww/cnc-ra-revive/issues">问题反馈</a></p>
+</div>
 
-[更新日志](CHANGELOG.zh-CN.md) · [English](README.md) · [已发布网站](https://zjwww.github.io/cnc-ra-revive/)
+[![中文信息图缩略图](preview.webp)](https://zjwww.github.io/cnc-ra-revive/index.html)
 
-展示 EA **《命令与征服》／《红色警戒》**与 **OpenTS、OpenRA、Chrono Divide** 之间关系的信息图。
+960 × 540 WebP 仅用于文档预览。[更新日志](CHANGELOG.zh-CN.md)。
 
-**当前版本：v1.11。** 网站首页默认使用浏览器原生缩放。 提供两套缩放机制、四个独立文件。每个文件均保留原来的 3840 × 2160 坐标系、16:9 图像比例、177 个文字元素和固定内部布局。
+**已发布版本：英文 v1.12-en · 简体中文 v1.11。** 网站首页继续使用完全未变的中文 v1.11 原生缩放页。每种语言均提供两套缩放机制、四个独立 HTML/SVG 文件，保留 3840 × 2160 坐标系、16:9 比例、177 个文字位置和固定布局。英文版翻译文字并调整部分字号，查看器脚本和图像几何位置不变。
+
+英文 v1.12-en 已完成 150% 显示缩放下的 32 项桌面检查、四个文件默认截图一致性检查、44 处链接检查／48 次新标签页打开，以及四个英文文件的移动端模拟检查。这些是已有本地验证记录，本次没有新增 iPhone／Safari 真机测试。
 
 ## 浏览器标签页标题
 
@@ -12,10 +30,12 @@
 
 ## 选择版本
 
-| 缩放机制 | HTML 网页 | 独立 SVG |
-| --- | --- | --- |
-| 浏览器原生缩放 | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [CnC-RA-Revive-4k-Native.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
-| 页面内代码缩放 | [CnC-RA-Revive-4k-Viewer.html](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [CnC-RA-Revive-4k-Viewer.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
+| 语言／版本 | 缩放机制 | HTML | SVG |
+| --- | --- | --- | --- |
+| 简体中文 v1.11 | 浏览器原生缩放 | [HTML](https://zjwww.github.io/cnc-ra-revive/index.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
+| 简体中文 v1.11 | 页面内代码缩放 | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
+| 英文 v1.12-en | 浏览器原生缩放 | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.svg) |
+| 英文 v1.12-en | 页面内代码缩放 | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer-EN.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer-EN.svg) |
 
 SVG 请直接在浏览器标签页中打开，以使用交互功能。每个 HTML、SVG 均内嵌图片和脚本，可单独使用，不依赖相邻文件或网络连接。同一套中的两个格式使用完全相同的查看器代码。
 
@@ -27,7 +47,7 @@ SVG 请直接在浏览器标签页中打开，以使用交互功能。每个 HTM
 
 ## 项目超链接
 
-四个 HTML/SVG 文件均加入 11 处项目文字链接。鼠标悬停时显示下划线及目标地址提示，键盘聚焦时也显示下划线。点击通过 `target="_blank"` 请求在新标签页打开，原信息图保留；实际使用新标签页还是新窗口由浏览器偏好设置决定。
+八个 HTML/SVG 文件均保留 11 处项目文字链接。鼠标悬停时显示下划线及目标地址提示，键盘聚焦时也显示下划线。点击通过 `target="_blank"` 请求在新标签页打开，原信息图保留；实际使用新标签页还是新窗口由浏览器偏好设置决定。
 
 右侧三个标题分别链接至 OpenTS GitHub 仓库、OpenRA 官网和 Chrono Divide 官网；底部表头分别链接至 OpenTS GitHub 仓库、OpenRA GitHub 仓库和 Chrono Divide GitHub 组织。EA 四个源码名称及 `CnC_Modding_Support` 分别链接到 Electronic Arts 对应的 GitHub 仓库。
 
@@ -35,7 +55,7 @@ HTML 使用 head 中的文档标题，独立 SVG 使用根元素中的文档标�
 
 ## iPhone／触屏浏览
 
-四个文件均将手机双指缩放和平移交给浏览器。页面内缩放组仅在桌面继续使用代码处理滚轮与快捷键。手机标签页采用同样的英文模式名，不显示百分比；两组的触屏手势仍由浏览器原生处理。
+八个文件均将手机双指缩放和平移交给浏览器。页面内缩放组仅在桌面继续使用代码处理滚轮与快捷键。手机标签页采用同样的英文模式名，不显示百分比；两组的触屏手势仍由浏览器原生处理。
 
 首次适配优先采用稳定的小视口 CSS 宽度（`svw`）；稳定高度（`svh`）也用于旋转后的稳定性检查。双指缩放、拖动和工具栏引起的单纯高度变化不重写图像尺寸。屏幕旋转或真实布局宽度变化后，等待约 150 毫秒稳定，再连续核对两帧；1 个 CSS 像素以内的差异视为误差。一次检查超过 800 毫秒仍未稳定就放弃，不会在手势期间强制适配；后续有效事件可重新发起检查。
 
@@ -53,7 +73,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 | 调整窗口大小 | 适配基准随窗口调整，保留相对原生缩放。 | 重新计算适配尺寸，保留所选页面内倍率。 |
 | 刷新 | 会话存储可用时，保留原生缩放的适配基准。 | 页面内倍率恢复为适配窗口的初始值。 |
 
-四个文件初始均**按可用视口宽度适配**，图像高度为宽度的 9/16；窗口高度不足时纵向滚动查看。图像不会拉伸、裁切或重排模块。桌面缩放以按宽度适配的尺寸为基准，放大后可用普通滚动查看其余部分；手机双指缩放仍交给浏览器。
+八个文件初始均**按可用视口宽度适配**，图像高度为宽度的 9/16；窗口高度不足时纵向滚动查看。图像不会拉伸、裁切或重排模块。桌面缩放以按宽度适配的尺寸为基准，放大后可用普通滚动查看其余部分；手机双指缩放仍交给浏览器。
 
 ### 原生版适配基准
 
@@ -65,13 +85,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 使用快捷键前先让文档获得焦点。支持 Ctrl + 等号和数字小键盘加减键。滚轮缩放尽量保持鼠标指向的图内位置，受滚动边界限制；键盘缩放以可视区域中心为锚点。HTML 与独立 SVG 标签页均显示桌面页面内倍率，不代表浏览器倍率。直接操作浏览器菜单仍属于另一套浏览器操作。
 
-共同的尺寸适配及页面内交互需要 JavaScript。SVG 作为独立交互文档打开时可运行脚本；通过 HTML 图片元素嵌入时脚本会被禁用，成为静态图像。四个文件中的图像仍保留可编辑的 SVG 文字与素材。
-
-## 缩略图
-
-[![信息图缩略图](preview.webp)](https://zjwww.github.io/cnc-ra-revive/index.html)
-
-960 × 540 WebP 仅用于文档预览。
+共同的尺寸适配及页面内交互需要 JavaScript。SVG 作为独立交互文档打开时可运行脚本；通过 HTML 图片元素嵌入时脚本会被禁用，成为静态图像。八个文件中的图像仍保留可编辑的 SVG 文字与素材。
 
 ## 信息图内容
 
@@ -85,7 +99,7 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 ## 文件与版本保留
 
-当前版本包含四个查看文件：`index.html`、`CnC-RA-Revive-4k-Native.svg`、`CnC-RA-Revive-4k-Viewer.html`、`CnC-RA-Revive-4k-Viewer.svg`，以及小尺寸 WebP 缩略图和独立的中英文文档。当前 GitHub 文件树不包含历史版本目录。
+中文 v1.11 包含 `index.html`、`CnC-RA-Revive-4k-Native.svg`、`CnC-RA-Revive-4k-Viewer.html` 和 `CnC-RA-Revive-4k-Viewer.svg`。英文 v1.12-en 新增 `CnC-RA-Revive-4k-Native-EN.html`、`CnC-RA-Revive-4k-Native-EN.svg`、`CnC-RA-Revive-4k-Viewer-EN.html` 和 `CnC-RA-Revive-4k-Viewer-EN.svg`。仓库包含各语言对应的 WebP 缩略图、浅深色 SVG Logo 和双语文档。完整 PNG 导出、Logo 方案板、工作脚本和历代版本目录仅在本地保留；以前发布过的文件仍可通过 Git 历史查看。
 
 ## 后期编辑
 
@@ -113,10 +127,10 @@ v1.7 移动端候选版已由用户在反馈的 iPhone 14 Pro／iOS 26.6.2 上�
 
 ## 网站托管
 
-GitHub Pages 从 `main` 分支根目录发布 v1.11，原生 HTML 作为首页。英文 README 顶部提供独立中文版及更新日志链接。
+GitHub Pages 从 `main` 分支根目录发布。默认首页仍为中文 v1.11 原生 HTML，本次英文发布不修改该页面。英文 v1.12-en 通过上方版本表进入，查看器内不添加语言开关。
 
 ## 署名与许可
 
 这是独立的社区信息图项目，与 Electronic Arts、OpenTS、OpenRA 和 Chrono Divide 没有隶属关系，也不代表这些项目的背书。游戏名称、商标、项目名称及第三方视觉标识的权利归其各自权利人所有。
 
-本仓库暂未选定统一的再分发许可。公开可访问不应被理解为对第三方美术或标识的统一授权。各上游项目有其各自的许可证，这些许可证不会自动适用于本信息图。
+项目自有的查看器代码、文档、原创图表文字／几何元素及原创 Logo 贡献采用 [MIT 许可证](LICENSE)，仅限贡献者实际拥有且可授予的权利；具体排除范围见[许可范围说明](LICENSING.zh-CN.md)。第三方游戏美术、名称、商标、Logo 和上游素材不由本项目授权。AI 辅助生成的图像不保证具有排他版权或已获得第三方许可，收录不代表授予贡献者并不拥有的权利。上游项目继续适用各自许可证。

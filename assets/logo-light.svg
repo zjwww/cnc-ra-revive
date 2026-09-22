@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 280 200" role="img" aria-labelledby="title">
+  <title id="title">CnC-RA-Revive CR command logo</title>
+  <g fill="#00b75a">
+    <path d="M31 0H115V39H42V118H118V158H31L0 124V35Z"/>
+    <path d="M126 0H207L240 36V82L201 121L263 184H201L142 120L198 68V39H126Z"/>
+    <path d="M61 53H82L108 79L82 105H61L86 79Z"/>
+  </g>
+  <path fill="#ff1717" d="M113 66H138V91H113Z"/>
+</svg>

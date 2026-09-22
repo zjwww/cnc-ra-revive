@@ -1,10 +1,28 @@
-# cnc-ra-revive
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+    <img src="assets/logo-light.svg" width="96" alt="CnC-RA-Revive CR command logo">
+  </picture>
+  <h1>CnC-RA-Revive</h1>
+  <p>A visual guide to Command &amp; Conquer / Red Alert and OpenTS, OpenRA, and Chrono Divide.</p>
+  <p>
+    <img src="https://img.shields.io/badge/version_EN-1.12--en-00a85a?style=flat" alt="English version 1.12-en">
+    <img src="https://img.shields.io/badge/version_ZH-1.11-00a85a?style=flat" alt="Chinese version 1.11">
+    <img src="https://img.shields.io/badge/platform-desktop_%7C_mobile-276bd1?style=flat" alt="Platform: desktop and mobile browsers">
+    <img src="https://img.shields.io/badge/runtime-browser_JavaScript-f0db4f?style=flat" alt="Runtime: browser JavaScript">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT_(project--owned)-blue?style=flat" alt="License: MIT for project-owned contributions; see scope"></a>
+  </p>
+  <p><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="https://zjwww.github.io/cnc-ra-revive/">Published site</a> | <a href="https://github.com/zjwww/cnc-ra-revive/issues">Issues</a></p>
+</div>
 
-[Changelog](CHANGELOG.md) · [简体中文](README.zh-CN.md) · [Published site](https://zjwww.github.io/cnc-ra-revive/)
+[![English infographic preview](preview-en.webp)](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.html)
 
-A visual guide to EA's **Command & Conquer / Red Alert** games and **OpenTS, OpenRA, and Chrono Divide**.
+The 960 × 540 WebP is for documentation preview only. [Changelog](CHANGELOG.md).
 
-**Current version: v1.11.** The default website uses browser-native zoom. Four self-contained files offer two zoom mechanisms. Every file preserves the same 3840 × 2160 coordinate system, 16:9 artwork proportions, 177 text elements, and fixed internal layout.
+**Published editions: English v1.12-en · Simplified Chinese v1.11.** The website homepage remains the unchanged Chinese v1.11 native viewer. Each language offers two zoom mechanisms in four self-contained HTML/SVG files, preserving the 3840 × 2160 coordinate system, 16:9 proportions, 177 text positions and fixed layout. The English edition translates the text and adjusts selected font sizes; viewer scripts and artwork geometry are unchanged.
+
+English v1.12-en validation covered 32 desktop checks at 150% display scaling, four consistent default document screenshots, 44 link checks / 48 new-tab activations and mobile emulation for all four English documents. These are recorded local tests; no new physical iPhone / Safari test was performed.
 
 ## Browser tab titles
 
@@ -12,10 +30,12 @@ Both formats use `CnC-RA-Revive · Native Scale` or `CnC-RA-Revive · Viewer Sca
 
 ## Open a version
 
-| Mechanism | HTML | Standalone SVG |
-| --- | --- | --- |
-| Browser-native zoom | [index.html](https://zjwww.github.io/cnc-ra-revive/index.html) | [CnC-RA-Revive-4k-Native.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
-| In-page code zoom | [CnC-RA-Revive-4k-Viewer.html](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [CnC-RA-Revive-4k-Viewer.svg](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
+| Language / version | Mechanism | HTML | SVG |
+| --- | --- | --- | --- |
+| English v1.12-en | Browser-native zoom | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native-EN.svg) |
+| English v1.12-en | In-page code zoom | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer-EN.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer-EN.svg) |
+| Simplified Chinese v1.11 | Browser-native zoom | [HTML](https://zjwww.github.io/cnc-ra-revive/index.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Native.svg) |
+| Simplified Chinese v1.11 | In-page code zoom | [HTML](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.html) | [SVG](https://zjwww.github.io/cnc-ra-revive/CnC-RA-Revive-4k-Viewer.svg) |
 
 Open each SVG directly in a browser tab for its interactive behavior. Each HTML and SVG includes its own artwork and script, so none requires a neighboring file or network connection. The two formats in each pair use identical viewer code.
 
@@ -35,7 +55,7 @@ HTML uses a document title in its head, while standalone SVG uses its root docum
 
 ## iPhone / touch browsing
 
-All four files delegate pinch zoom and panning to the mobile browser. The in-page pair retains code-driven wheel/keyboard controls on desktop only. Mobile tab titles use the same English mode names without a percentage; touch gestures remain browser-native in both pairs.
+All eight files delegate pinch zoom and panning to the mobile browser. The in-page pair retains code-driven wheel/keyboard controls on desktop only. Mobile tab titles use the same English mode names without a percentage; touch gestures remain browser-native in both pairs.
 
 The first fit uses stable small-viewport CSS width (`svw`) where supported; stable height (`svh`) also participates in rotation-settling checks. Pinch zoom, panning and toolbar-only height changes do not rewrite the artwork size. A rotation or genuine layout-width change is fitted after about 150 ms of stable measurements and two animation-frame checks. Differences within one CSS pixel are ignored. An 800 ms deadline abandons an unsettled attempt; it never forces a fit during an active touch gesture. Subsequent relevant events can start a new attempt.
 
@@ -53,7 +73,7 @@ The v1.7 mobile candidate was tested by the user on the reported iPhone 14 Pro /
 | Resize window | Adapt the fitted reference while retaining relative native zoom. | Adapt the fit while retaining the selected in-page multiplier. |
 | Reload | Keep the native fitted reference when session storage is available. | Reset in-page zoom to the fitted size. |
 
-All four files initially **fit the available viewport width**. Height follows at 9/16 of the artwork width; a shorter window uses vertical scrolling. The artwork is never stretched, cropped or rearranged. Desktop zoom enlarges or reduces this width-fit reference; after enlargement, use ordinary scrolling to reach the rest of the graphic. Mobile pinch zoom remains controlled by the browser.
+All eight files initially **fit the available viewport width**. Height follows at 9/16 of the artwork width; a shorter window uses vertical scrolling. The artwork is never stretched, cropped or rearranged. Desktop zoom enlarges or reduces this width-fit reference; after enlargement, use ordinary scrolling to reach the rest of the graphic. Mobile pinch zoom remains controlled by the browser.
 
 ### Native fit reference
 
@@ -67,12 +87,6 @@ Focus the document before using shortcuts. Ctrl + equals and numeric-keypad plus
 
 JavaScript is required for the shared sizing behavior and in-page controls. SVG scripts run when opened as an interactive document; embedding an SVG using an HTML image element disables its scripts, so it becomes a static image. The graphic remains editable SVG text and imagery in every file.
 
-## Preview
-
-[![Infographic preview](preview.webp)](https://zjwww.github.io/cnc-ra-revive/index.html)
-
-The small 960 × 540 WebP is documentation-only.
-
 ## What the diagram covers
 
 - Tiberian Dawn, Tiberian Sun, and Firestorm.
@@ -85,7 +99,7 @@ This repository publishes an informational graphic. It does not contain a playab
 
 ## Files and version preservation
 
-The current version contains four viewers: `index.html`, `CnC-RA-Revive-4k-Native.svg`, `CnC-RA-Revive-4k-Viewer.html`, and `CnC-RA-Revive-4k-Viewer.svg`. A small WebP preview and separate English/Chinese documentation are included. Historical version directories are kept out of the current GitHub tree.
+The Chinese v1.11 edition contains `index.html`, `CnC-RA-Revive-4k-Native.svg`, `CnC-RA-Revive-4k-Viewer.html`, and `CnC-RA-Revive-4k-Viewer.svg`. English v1.12-en adds `CnC-RA-Revive-4k-Native-EN.html`, `CnC-RA-Revive-4k-Native-EN.svg`, `CnC-RA-Revive-4k-Viewer-EN.html`, and `CnC-RA-Revive-4k-Viewer-EN.svg`. Language-specific WebP previews, light/dark SVG logos and bilingual documentation are included. Full-size PNG exports, logo concept boards, working scripts and historical version directories remain local. Earlier published files remain available in Git history.
 
 ## Editing
 
@@ -113,10 +127,10 @@ Use upstream documentation for current project status and technical details:
 
 ## Hosting
 
-GitHub Pages serves v1.11 from the repository root on `main`, with native HTML as its homepage. The English README links to separate Chinese documentation and changelogs.
+GitHub Pages serves the repository root on `main`. The default homepage remains Chinese v1.11 native HTML, unchanged by the English publication. Use the version table above to open English v1.12-en. There is no in-viewer language switch.
 
 ## Attribution and licensing
 
 This is an independent community infographic and is not affiliated with or endorsed by Electronic Arts, OpenTS, OpenRA, or Chrono Divide. Game names, trademarks, project names, and third-party visual identities are acknowledged as belonging to their respective owners.
 
-No project-wide redistribution license has been selected for this repository. Public availability should not be interpreted as a blanket license for third-party artwork or marks. The upstream projects have their own licenses; those licenses do not automatically apply to this infographic.
+Project-owned viewer code, documentation, original diagram text/geometry and original logo contributions are available under the [MIT License](LICENSE), only to the extent the contributors hold the relevant rights. See [licensing scope](LICENSING.md) for exclusions. Third-party game artwork, names, trademarks, logos and upstream materials are not licensed by this project. AI-assisted images carry no promise of exclusive copyright or third-party clearance; inclusion does not grant rights the contributors do not hold. Upstream projects retain their own licenses.
